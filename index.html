@@ -7,39 +7,40 @@
   </head>
   <body>
     <h1 id="title">Survey Form</h1>
-    <p id="description">We welcome your comments through this survey form</p>
+    <p id="description">We would love to here your thoughts on how we are doing</p>
     <form id="survey-form" action='https://register-demo.freecodecamp.org'>
       <fieldset>
-        <label>Enter your name: <input type="text" id="name" required /></label>
-        <label>Enter your email: <input type="email" id="email" required /></label>
-        <label>Enter your age: <input type="number" id="age" pattern="[0-120]" required /></label>
-        <label>Enter proposed password: <input type="password" id="password" pattern="[a-z0-5]{8,}" required /></label>
+        <label id="name-label">Enter your name: <input type="text" id="name" placeholder="enter full name or nickname"required /></label>
+        <label id="email-label">Enter your email: <input type="email" id="email" placeholder="enter valid email address" required /></label>
+        <label id="number-label">Enter your age: <input type="number" id="number" min="0" max="120" placeholder="age in years"required /></label>
       </fieldset>
       <fieldset>
-        <label><input type="radio" name="account-type" class="inline" /> Personal Account</label>
-        <label><input type="radio" name="account-type" class="inline" /> Business Account</label>
-        <label>
-          <input type="checkbox" name="terms" class="inline" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-        </label>
-      </fieldset>
-      <fieldset>
-        <label>Upload a profile picture: <input type="file" name="file" /></label>
-        <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
-        </label>
-        <label>How did you hear about us?
-          <select name="referrer">
+        <label id="dropdown-label">Type of comment?
+          <select id="dropdown" name="referrer">
             <option value="">(select one)</option>
-            <option value="1">freeCodeCamp News</option>
-            <option value="2">freeCodeCamp YouTube Channel</option>
-            <option value="3">freeCodeCamp Forum</option>
-            <option value="4">Other</option>
+            <option value="1">Positive (thanks)</option>
+            <option value="2">Negitive (We'll try harder)</option>
+            <option value="3">Observation/Error</option>
+            <option value="4">General Comment</option>
           </select>
         </label>
-        <label>Provide a bio:
-          <textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+        <label>Enter comments:
+          <textarea name="bio" rows="3" cols="30" placeholder="please tell us what you think here..."></textarea>
         </label>
       </fieldset>
-      <input type="submit" value="Submit" />
+      <fieldset>
+        <label>Would you recommend our course to others? 
+        <label><input type="radio" name="recommedation" class="inline" value="text" /> Yes </label>
+        <label><input type="radio" name="recommedation" class="inline" value="text"/> Maybe</label>
+        <label><input type="radio" name="recommedation" class="inline" value="text"/> No </label>
+      </fieldset>
+      <fieldset>
+        <label>What areas of our course could be improved </label>
+        <label><input type="checkbox" value="text" class="inline" required /> Visual style and layout</label>
+        <label><input type="checkbox" value="text" class="inline" required /> Quality of instructions</label>
+        <label><input type="checkbox" value="text" class="inline" required /> Additional or extended courses</label>
+      </fieldset>
+      <input id="submit" type="submit" value="Submit" />
     </form>
   </body>
 </html>
